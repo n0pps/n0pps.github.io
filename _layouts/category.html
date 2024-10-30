@@ -1,0 +1,41 @@
+<!-- _layouts/category.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <h1>Posts in {{ page.category }}</h1>
+    </header>
+
+    <main class="content">
+        <table class="post-table">
+            <thead>
+                <tr>
+                    <th>Post #</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign posts = site.posts | where: "categories", page.category %}
+                {% for post in posts %}
+                <tr>
+                    <td>{{ forloop.index }}</td>
+                    <td><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
+                    <td>{{ post.date | date: "%B %d, %Y" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; {{ "now" | date: "%Y" }} Your Blog Name</p>
+    </footer>
+</body>
+</html>

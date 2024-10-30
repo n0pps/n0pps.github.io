@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Your Blog Title" }}</title>
+    <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <!-- ASCII Header Section -->
+    <header>
+        <div class="header">
+   <img src="http://localhost:4000/assets/images/logo.png">
+            <div class="nav-links">
+                <a href="{{ '/' | relative_url }}">[Home]</a>
+                <a href="{{ '/archive' | relative_url }}">[Archive]</a>
+                <a href="{{ '/whoami' | relative_url }}">[Whoami]</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content with Border -->
+    <div class="content-border">
+ <div class="opt">
+    <div class="syle-tit"></div>
+   <strong>Title:</strong> {{page.title}}
+   <strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}
+ </div>
+            {{ content }}
+
+    </div>
+    
+    <footer>
+        <p>&copy; {{ "now" | date: "%Y" }} [n0pp].</p>
+    </footer>
+</body>
+</html>

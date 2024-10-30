@@ -1,0 +1,61 @@
+# Basic settings
+title: "NOP Blog"
+description: "Um blog pessoal inspirado no estilo Phrack, com tema em ASCII e layout em texto simples."
+baseurl: "" # Para subdiretórios, insira o nome do diretório
+url: "" # Substitua pelo seu domínio quando estiver hospedado
+
+# Author settings
+author:
+  name: "N0p"
+  email: ""
+
+# Markdown and permalink settings
+markdown: kramdown
+permalink: /:categories/:title/
+timezone: "Europe/Lisbon" # Ajuste para o seu fuso horário
+
+# Directory settings
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title.html
+
+# Theme and design settings
+sass:
+  style: compressed
+include: ["_pages"]
+exclude: ["Gemfile", "Gemfile.lock", "README.md", ".gitignore", ".jekyll-cache"]
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Navigation settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Menu items
+menu:
+  home: "/"
+  about: "/whoami"
+  posts: "/posts/"
+
+# Build settings
+markdown_ext: "markdown,mkdn,mkdn,mkdown,md"
+highlighter: rouge
+
+# Social and other options
+social:
+  github_username: "seu_usuario_github"
+  linkedin_username: "seu_usuario_linkedin"
+  twitter_username: "seu_usuario_twitter"

@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    font-family: sans-serif;
+    overflow-x: hidden; /* Previne a rolagem horizontal */
+}
+
+.header {
+    text-align: center;
+    background-color: black; /* Adjust as needed */
+    padding: 20px;
+}
+
+.ascii-logo {
+    color: white; /* Change to green (#00ff00) for a terminal vibe */
+    font-family: "Courier New", monospace;
+    margin: 0;
+}
+
+.nav-links {
+    margin-top: 10px;
+}
+
+.nav-links a {
+    color: white; /* Or green for terminal feel */
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: "Courier New", monospace;
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Add hover effect */
+}
+
+header img {
+    width: 200px;
+    height: auto;
+}
+
+/* Style for the main content border */
+.content-border {
+    border: 2px solid gray;
+    padding: 1px;
+    margin: 20px auto;
+    width: 100%; /* Mudado para width: 100% */
+    max-width: 800px; /* Mantém o max-width se necessário */
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #444;
+    border-top: 1px solid black; 
+    border-bottom: 2px solid black;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    width: 100%; /* Mudado para width: 100% */
+    padding: 20px;
+    background-color: #222;
+    color: rgb(255, 255, 255);
+    border: 1px solid #444;
+    line-height: 1.6;
+    overflow-wrap: break-word; /* Permite quebra de palavras longas */
+}
+
+pre, code {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 0px;
+    text-align: left;
+    font-size: 12px;
+    text-decoration: none;
+    overflow: hidden; /* Mantém seções de código roláveis se necessário */
+    white-space: pre-wrap; /* Permite que o texto se quebre em linhas */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #f8f8f2;
+    font-size: 10px;
+    background-color: #000; /* Ajuste a cor de fundo para combinar com o restante do site */
+    border-top: 1px solid #444;
+}
+
+.p-title {
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+h1{
+
+    color: white;
+}
+.opt, .opt-spe {
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 2px solid gray;
+    padding: 4px;
+      padding-left: 4px;
+    padding-left: 6px;
+    text-align: left;
+    font-size: 12px;
+    
+  }
+
+img{
+
+    max-width:720px; 
+    max-height:429px;
+
+ }
+ 
+ a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: rgb(255, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  pre#cve-list {
+    font-family: monospace;
+    background-color: #1e1e1e;
+    color: #f8f8f2;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    white-space: pre-wrap; /* Wraps long lines */
+    max-height: 400px;
+    overflow-y: auto;
+}
