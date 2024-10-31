@@ -1,7 +1,7 @@
 async function fetchLatestCVEs() {
     const cveListElement = document.getElementById('cve-list');
     try {
-        const response = await fetch('https://services.nvd.nist.gov/rest/json/cves/2.0?cvssV2Severity=LOW&resultsPerPage=5', {
+        const response = await fetch('https://services.nvd.nist.gov/rest/json/cves/2.0?cvssV2Severity=HIGH&resultsPerPage=10', {
             headers: {
                 'Accept': 'application/json'
             }
