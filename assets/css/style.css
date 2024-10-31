@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +8,17 @@
 body {
     background-color: #000000;
     font-family: sans-serif;
-    overflow-x: hidden; /* Previne a rolagem horizontal */
+    overflow-x: hidden; 
 }
 
 .header {
     text-align: center;
-    background-color: black; /* Adjust as needed */
+    background-color: black; 
     padding: 20px;
 }
 
 .ascii-logo {
-    color: white; /* Change to green (#00ff00) for a terminal vibe */
+    color: white; 
     font-family: "Courier New", monospace;
     margin: 0;
 }
@@ -28,14 +28,14 @@ body {
 }
 
 .nav-links a {
-    color: white; /* Or green for terminal feel */
+    color: white; 
     text-decoration: none;
     margin: 0 10px;
     font-family: "Courier New", monospace;
 }
 
 .nav-links a:hover {
-    text-decoration: underline; /* Add hover effect */
+    text-decoration: underline;
 }
 
 header img {
@@ -43,13 +43,13 @@ header img {
     height: auto;
 }
 
-/* Style for the main content border */
+
 .content-border {
     border: 2px solid gray;
     padding: 1px;
     margin: 20px auto;
-    width: 100%; /* Mudado para width: 100% */
-    max-width: 800px; /* Mantém o max-width se necessário */
+    width: 100%; 
+    max-width: 800px; 
     background-color: #1e1e1e;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
@@ -76,13 +76,13 @@ header img {
 }
 
 .content {
-    width: 100%; /* Mudado para width: 100% */
+    width: 100%; 
     padding: 20px;
     background-color: #222;
     color: rgb(255, 255, 255);
     border: 1px solid #444;
     line-height: 1.6;
-    overflow-wrap: break-word; /* Permite quebra de palavras longas */
+    overflow-wrap: break-word; 
 }
 
 pre, code {
@@ -93,8 +93,8 @@ pre, code {
     text-align: left;
     font-size: 12px;
     text-decoration: none;
-    overflow: hidden; /* Mantém seções de código roláveis se necessário */
-    white-space: pre-wrap; /* Permite que o texto se quebre em linhas */
+    overflow: hidden; 
+    white-space: pre-wrap; 
 }
 
 footer {
@@ -105,7 +105,7 @@ footer {
     padding: 10px;
     color: #f8f8f2;
     font-size: 10px;
-    background-color: #000; /* Ajuste a cor de fundo para combinar com o restante do site */
+    background-color: #000; 
     border-top: 1px solid #444;
 }
 

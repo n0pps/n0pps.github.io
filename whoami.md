@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Whoami
-description: "Learn more about me and my journey in cybersecurity."
+description: "Whoami"
 ---
 <pre>
 ██     ██ ██   ██  ██████   █████  ███    ███ ██ 

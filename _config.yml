@@ -1,8 +1,8 @@
 # Basic settings
-title: "NOP Blog"
-description: "Um blog pessoal inspirado no estilo Phrack, com tema em ASCII e layout em texto simples."
-baseurl: "" # Para subdiretórios, insira o nome do diretório
-url: "" # Substitua pelo seu domínio quando estiver hospedado
+title: "N0p Blog"
+description: ""
+baseurl: "" 
+url: "https://n0pps.github.io/" 
 
 # Author settings
 author:
@@ -12,7 +12,7 @@ author:
 # Markdown and permalink settings
 markdown: kramdown
 permalink: /:categories/:title/
-timezone: "Europe/Lisbon" # Ajuste para o seu fuso horário
+timezone: "Europe/Lisbon" 
 
 # Directory settings
 collections:
@@ -53,9 +53,3 @@ menu:
 # Build settings
 markdown_ext: "markdown,mkdn,mkdn,mkdown,md"
 highlighter: rouge
-
-# Social and other options
-social:
-  github_username: "seu_usuario_github"
-  linkedin_username: "seu_usuario_linkedin"
-  twitter_username: "seu_usuario_twitter"

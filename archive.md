@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Archive"
-description: "Welcome to my Phrack-themed personal blog."
+description: "Blog"
 status: live
 ---
 
