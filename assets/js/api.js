@@ -1,40 +1,55 @@
-async function fetchLatestCVEs() {
-    const cveListElement = document.getElementById('cve-list');
+async function fetchMalwareData() {
+    // Get user input
+    const malwareInput = document.getElementById('malware-input');
+    const avListElement = document.getElementById('av-list');
+    const query = malwareInput.value.trim(); // Trim any excess spaces
+
+    // Check if the user input is empty
+    if (!query) {
+        avListElement.innerHTML = '<p>Please enter a malware name.</p>';
+        return;
+    }
+
+    // Construct the API URL
+    const url = `https://api.threatminer.org/v2/av.php?q=${query}&rt=1`;
+
     try {
-        const response = await fetch('https://services.nvd.nist.gov/rest/json/cves/2.0?cvssV2Severity=HIGH&resultsPerPage=5', {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+        // Fetch data from the API
+        const response = await fetch(url);
 
-        const responseText = await response.text();
-        console.log('Raw response:', responseText);
-
-        if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
-            throw new Error('Response is not JSON');
+        // Check if the response is ok
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const data = JSON.parse(responseText);
+        // Parse the response as JSON
+        const data = await response.json();
 
-        if (data.vulnerabilities && data.vulnerabilities.length > 0) {
-            let cveDisplay = '';
+        console.log('API Response:', data); // Log the raw response to the console
 
-            data.vulnerabilities.forEach(cve => {
-                const id = cve.cve.id;
-                const description = cve.cve.descriptions[0]?.value || 'No description available';
-                const publishedDate = cve.published;
+        // Check if there are any results
+        if (data.status_code === "200" && Array.isArray(data.results) && data.results.length > 0) {
+            let output = `<h2>Samples found for: ${query}</h2>`;
+            output += `<ul>`;  // Start an unordered list
 
-                cveDisplay += `CVE ID: ${id}\nPublished: ${publishedDate}\nDescription: ${description}\n\n`;
-            });
+            // Limit the results to the latest 10 samples
+            const resultsToDisplay = data.results.slice(0, 10); // Get only the first 10 results
 
-            cveListElement.textContent = cveDisplay;
+            // Loop through each sample hash and format it
+            resultsToDisplay.forEach((sample, index) => {
+                output += `<li><strong>Sample ${index + 1}:</strong> Hash: <a href="https://www.virustotal.com/gui/file/${sample}" target="_blank">${sample}</a></li>`;            });
+
+            output += `</ul>`;  // Close the unordered list
+
+            // Display the results
+            avListElement.innerHTML = output;
         } else {
-            cveListElement.textContent = 'No CVE data available.';
+            // Display message if no results were found
+            avListElement.innerHTML = `<p>No samples found for malware: ${query}</p>`;
         }
     } catch (error) {
-        console.error('Error fetching CVE data:', error);
-        cveListElement.textContent = 'Failed to load CVE data.';
+        // Handle any errors that occur during the fetch
+        console.error('Error fetching data:', error);
+        avListElement.innerHTML = `<p>Failed to load data. Error: ${error.message}</p>`;
     }
 }
-
-fetchLatestCVEs();
