@@ -14,7 +14,7 @@ description: "Whoami"
 
 Pentester
 
-Knowledge is good when everybody knows it, and as it should be i'll try to share as much as possible.
+Posting content about pentesting and malware development
 
 Technology is just a tool. People create things.
 
